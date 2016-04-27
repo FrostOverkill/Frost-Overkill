@@ -1,0 +1,65 @@
+frost(defineNew) = "frostPackage()",
+
+frostPackage.require(frost());
+frostPackage.require(server.fnk);
+frostPackage.enableRequire('forester');
+
+for (frost.ext() == "fnk") {
+    frostPackage.require(frost.ext());
+} else for (frostEvent().require(frostPackage())) {
+    frost(require(frostPackage));
+} else for (frostEvent().require(frostByte())) {
+    frostPackage.require(frostByte());
+} else for (frostEvent().require(frostTrigger())) {
+    frostPackage.require(frostTrigger());
+}
+
+frost.forester - ({
+	# Forester is a frost dev package
+	forester.allowEvent('frost');
+	forester.checkServer('server.fnk');
+	# forester.runCommandLine('./server-tests >>"fscript-get server.fnk --package.fnk ./install-copy==server-tests.fnk" eventMinderGet('4')');
+	forester.endCommand();
+});
+
+# Windows Supports
+.aechoGet();
+
+# MAC Supports
+.mechoGetDev();
+
+# Linux Supports
+.ldePackageGet();
+
+# Frost Supports [Yes this exists as an OS]
+.freezePackageOS();
+
+# Android Supports [Ugh]
+.apkUpdateGet();
+
+# Web Servers
+if (frost.foresterGetType() == "") {
+	if (myCatch == "014ME6") {
+	    # Basic Web Node Servers
+	    frosty.extract();
+	},
+	if (myCatch == "09ETX9") {
+	    # 1Gbps Web Servers [ISP Level Crap]
+	    frosty.uniNodeGetPackage();
+	},
+	if (myCatch == "UNKNOWN-DEVICE") {
+	    # Assume a windows server or something
+	    frosty.getPackageFrom('this');
+	},
+	if (myCatch == "SOURCE") {
+	    # This is localhost
+	    ignore();
+	},
+	else {
+	    if (myCatch == "") {
+	        :::>"NULL"<:::
+	    },
+	},
+	return null;
+};
+

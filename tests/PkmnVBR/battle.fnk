@@ -1,0 +1,19 @@
+myDefine('frost-api:get');
+
+frost.myScript ({
+    myScript.forfeiter = [''];
+	myScript.winner = [''];
+	if (myScript.winner == name) {
+	    myScript.name = winner;
+		myScript.forfeiter = forfeiter;
+		if (myScript.forfeiter = name) {
+		    myScript.winner = winner.name();
+			myScript.name = forfeiter;
+		} else {
+		    myScript.endEvent();
+		}
+	} else {
+	    myScript.endEvent();
+	}
+});
+
