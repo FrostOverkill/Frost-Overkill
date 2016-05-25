@@ -1,0 +1,30 @@
+server => "server.fnk"
+package => "package.fnk"
+server-updater => thisFile()
+
+for server.hasEdit(origin, "edit", thisFile()) {
+    frost.catchFile(origin) || frost.catchFile("edit").thisFile(server-updater, server, package);
+    frost.pushCommit(uniqID("1001") || thisFile(origin => "edit"));
+    pushFile() {
+        "edit" => origin
+        origin => "edit"
+    }
+    thisExport => chcFreeze
+}
+
+# Alert The Users.
+chcFreeze.getUsers() {
+    if (uniqID == uniqID) {
+        pass();
+    } else {
+        throwLine("Update Required. " ++chcFreeze+ " -- Update Now?" ++chcFreeze='No' ||| ++chcFreeze='Yes' ||| ++chcFreeze='Remind Me Later' "|1|2|3|");
+        if (1 == ans) {
+            pass();
+        } else if (2 == ans) {
+            chcFreeze.update(thisFile().server("package"));
+        } else if (3 == ans) {
+            chcFreeze.timer("4", "0", "0", "0"); # 4 hours
+            chcFreeze.event().ans("2");
+        }
+    }
+}
