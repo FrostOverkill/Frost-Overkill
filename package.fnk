@@ -37,29 +37,8 @@ frost.forester - ({
 # Android Supports [Ugh]
 .apkUpdateGet();
 
-# Web Servers
-if (frost.foresterGetType() == "") {
-	if (myCatch == "014ME6") {
-	    # Basic Web Node Servers
-	    frosty.extract();
-	},
-	if (myCatch == "09ETX9") {
-	    # 1Gbps Web Servers [ISP Level Crap]
-	    frosty.uniNodeGetPackage();
-	},
-	if (myCatch == "UNKNOWN-DEVICE") {
-	    # Assume a windows server or something
-	    frosty.getPackageFrom('this');
-	},
-	if (myCatch == "SOURCE") {
-	    # This is localhost
-	    ignore();
-	},
-	else {
-	    if (myCatch == "") {
-	        :::>"NULL"<:::
-	    },
-	},
-	return null;
-};
-
+# New frost deps
+  # Background Query
+frost.require('.unc').fileExtentions();
+  # Server handler
+frost.require('.fsd').fileExtentions();
