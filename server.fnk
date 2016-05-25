@@ -99,39 +99,9 @@ frost.scriptType('html') {
 	"- Disable Ports: <a href='server:ports-close'>Here</a>"
 }.endScriptType();
 
-@signaller;
-
->>char-meta --force="e2x" ++eval
-<<"result"
-
->>try server.fnk --force="9045"
-<<"result"
-
-@noSignaller;
-
-@ruby;
-
->>ruby -v
-<<"must-return-version"
-
-@noRuby;
-
-@testCompile;
-
-.//server.fnk >> server-test.exe
-exec server-test.exe
-eval char server-test.exe --all
-exit server-test.exe
-delete server-test.exe
-
-.//package.fnk >> package-test.msi
-exec package-test.msi --hidden
-eval char package-test.msi
-try (
-    .//package-test.msi >> package.fnk
-    exit compile eval --all
-)
-exit package-test.msi
-delete package-test.msi
-
-@notestCompile
+frost.serverUpdate = ({
+    require file("server-updater.unc").name();
+    | frost.prio = frost().hasPriority("name", "event", signal).testEvent();
+    | | frost.pyOnYanGH("|| yEnGGenX || wEKOltApI").wpiGet(frost, signal, origin, edit).bracketProperties();
+    export server;
+});
